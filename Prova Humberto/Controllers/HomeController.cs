@@ -8,11 +8,21 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-#region Models
-
 public class Candidate
 {
     public Guid Id { get; set; } = Guid.NewGuid();
+
+    public Candidate() { }
+
+    public Candidate(Guid id, string name, string email, int turma, string proposal, int number)
+    {
+        Id = id;
+        Name = name;
+        Email = email;
+        Turma = turma;
+        Proposal = proposal;
+        Number = number;
+    }
 
     [Required]
     [StringLength(50, MinimumLength = 3)]
